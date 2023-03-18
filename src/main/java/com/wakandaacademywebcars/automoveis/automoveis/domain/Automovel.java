@@ -3,6 +3,8 @@ package com.wakandaacademywebcars.automoveis.automoveis.domain;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import com.wakandaacademywebcars.automoveis.automoveis.application.api.AutomovelRequest;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -20,6 +22,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class Automovel {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idAuto;
@@ -33,5 +36,14 @@ public class Automovel {
 	private Double valor;
 	private LocalDate dataVenda; 
 	private LocalDateTime dataHoraDoCadstro; 
+	
+	public Automovel(AutomovelRequest automovelRequest) {
+		this.marca = automovelRequest.getMarca();
+		this.tipo = automovelRequest.getTipo();
+		this.descricaoTec = automovelRequest.getDescricaoTec();
+		this.valor = automovelRequest.getValor();
+		this.dataHoraDoCadstro = LocalDateTime.now();
+	}
+
 	
 }
