@@ -21,7 +21,7 @@ public class AutomovelApplicationService implements AutomovelService {
 		log.info("[inicia] AutomovelApplicationService - cadastraNovoVeiculo");
 		Automovel auto =autoRepository.salva(new Automovel(automovelRequest));
 		log.info("[finaliza] AutomovelApplicationService - cadastraNovoVeiculo");
-		return null;
+		return AutomovelResponse.builder().idAuto(auto.getIdAuto()).build();
 	} 
 
 }
