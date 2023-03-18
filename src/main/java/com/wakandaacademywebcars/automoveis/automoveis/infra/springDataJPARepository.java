@@ -1,4 +1,4 @@
-package com.wakandaacademywebcars.automoveis.automoveis.application.infra;
+package com.wakandaacademywebcars.automoveis.automoveis.infra;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

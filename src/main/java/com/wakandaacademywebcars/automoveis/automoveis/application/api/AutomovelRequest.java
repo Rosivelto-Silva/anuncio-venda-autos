@@ -10,7 +10,7 @@ import lombok.Getter;
 @Getter
 public class AutomovelRequest {
 	private Marca marca;
-	private Categoria tipo;
+	private Categoria categoria;
 	private String descricaoTec;
 	private Double valor;
 	private LocalDate dataVenda; 

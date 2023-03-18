@@ -29,7 +29,7 @@ public class Automovel {
 	@Enumerated(EnumType.STRING)
 	private Marca marca;
 	@Enumerated(EnumType.STRING)
-	private Categoria tipo;
+	private Categoria categoria;
 	@NotBlank
 	private String descricaoTec;
 	@NotNull
@@ -39,7 +39,7 @@ public class Automovel {
 	
 	public Automovel(AutomovelRequest automovelRequest) {
 		this.marca = automovelRequest.getMarca();
-		this.tipo = automovelRequest.getTipo();
+		this.categoria = automovelRequest.getCategoria();
 		this.descricaoTec = automovelRequest.getDescricaoTec();
 		this.valor = automovelRequest.getValor();
 		this.dataHoraDoCadstro = LocalDateTime.now();

@@ -1,9 +1,9 @@
-package com.wakandaacademywebcars.automoveis.automoveis.application.infra;
+package com.wakandaacademywebcars.automoveis.automoveis.infra;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 import com.wakandaacademywebcars.automoveis.automoveis.application.repository.AutomovelRepository;
+import com.wakandaacademywebcars.automoveis.automoveis.domain.Automovel;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -13,4 +13,12 @@ import lombok.extern.log4j.Log4j2;
 @Repository
 public class AutomovelInfraRepository implements AutomovelRepository {
 	private final springDataJPARepository jpaRepository;
+
+	@Override
+	public Automovel salva(Automovel automovel) {
+		log.info("[inicia] AutomovelInfraRepository - salva");
+		var salvaAuto = jpaRepository.save(automovel); 
+		log.info("[finaliza] AutomovelInfraRepository - salva");
+		return salvaAuto;
+	}
 }
