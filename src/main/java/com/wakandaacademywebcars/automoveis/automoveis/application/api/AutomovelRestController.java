@@ -1,5 +1,7 @@
 package com.wakandaacademywebcars.automoveis.automoveis.application.api;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wakandaacademywebcars.automoveis.automoveis.application.service.AutomovelService;
@@ -19,5 +21,13 @@ public class AutomovelRestController implements AutomovelAPI {
 		AutomovelResponse auto = autoService.cadastraNovoVeiculo(automovelRequest);
 		log.info("[finaliza] AutomovelRestController - postCadastraNovoAutomovel");
 		return auto;
+	}
+
+	@Override
+	public List<AutomovelListResponse> getListaTodosAutomoveis() {
+		log.info("[inicia] AutomovelRestController - getListaTodosAutomoveis");
+		List<AutomovelListResponse> listaAutos = autoService.listaTodosAutomoveis();
+		log.info("[finaliza] AutomovelRestController - getListaTodosAutomoveis");
+		return listaAutos;
 	} 
 }
