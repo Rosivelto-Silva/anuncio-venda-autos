@@ -1,5 +1,7 @@
 package com.wakandaacademywebcars.automoveis.automoveis.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.wakandaacademywebcars.automoveis.automoveis.application.repository.AutomovelRepository;
@@ -20,5 +22,13 @@ public class AutomovelInfraRepository implements AutomovelRepository {
 		var salvaAuto = jpaRepository.save(automovel); 
 		log.info("[finaliza] AutomovelInfraRepository - salva");
 		return salvaAuto;
+	}
+
+	@Override
+	public List<Automovel> buscaTodosAutomoveis() {
+		log.info("[inicia] AutomovelInfraRepository - buscaTodosAutomoveis");
+		var busca = jpaRepository.findAll();
+		log.info("[finaliza] AutomovelInfraRepository - buscaTodosAutomoveis");
+		return busca;
 	}
 }
