@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wakandaacademywebcars.automoveis.automoveis.application.service.AutomovelService;
 
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
